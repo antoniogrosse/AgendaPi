@@ -5,6 +5,9 @@
  */
 package br.senac.sp.pi3.agendadecontatos.telas;
 
+import br.senac.sp.agendadecontatos.servicos.ServicosAgenda;
+import br.senac.sp.pi3.agendadecontatos.contrutor.Contato;
+
 /**
  *
  * @author dmamo
@@ -17,7 +20,7 @@ public class NovoContato extends javax.swing.JFrame {
     public NovoContato() {
         initComponents();
     }
-
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -37,8 +40,8 @@ public class NovoContato extends javax.swing.JFrame {
         textFieldTelefone = new javax.swing.JTextField();
         textFieldNascimento = new javax.swing.JTextField();
         textFieldEmail = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        buttonSalvar = new javax.swing.JButton();
+        buttonCancelar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setResizable(false);
@@ -53,17 +56,17 @@ public class NovoContato extends javax.swing.JFrame {
 
         jLabel5.setText("E-mail:");
 
-        jButton1.setText("Salvar");
-        jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
+        buttonSalvar.setText("Salvar");
+        buttonSalvar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jButton1MouseClicked(evt);
+                buttonSalvarMouseClicked(evt);
             }
         });
 
-        jButton2.setText("Cancelar");
-        jButton2.addMouseListener(new java.awt.event.MouseAdapter() {
+        buttonCancelar.setText("Cancelar");
+        buttonCancelar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jButton2MouseClicked(evt);
+                buttonCancelarMouseClicked(evt);
             }
         });
 
@@ -94,9 +97,9 @@ public class NovoContato extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(246, Short.MAX_VALUE)
-                .addComponent(jButton2)
+                .addComponent(buttonCancelar)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton1)
+                .addComponent(buttonSalvar)
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
@@ -122,8 +125,8 @@ public class NovoContato extends javax.swing.JFrame {
                     .addComponent(textFieldEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
-                    .addComponent(jButton2))
+                    .addComponent(buttonSalvar)
+                    .addComponent(buttonCancelar))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -141,13 +144,33 @@ public class NovoContato extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseClicked
+    private void buttonCancelarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttonCancelarMouseClicked
         this.dispose();
-    }//GEN-LAST:event_jButton2MouseClicked
+    }//GEN-LAST:event_buttonCancelarMouseClicked
 
-    private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
-        this.dispose();
-    }//GEN-LAST:event_jButton1MouseClicked
+    private void buttonSalvarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttonSalvarMouseClicked
+        Contato contato = new Contato();
+        
+        contato.setNome(textFieldNome.getText());
+        contato.setTelefone(textFieldTelefone.getText());
+        contato.setDataNasc(textFieldNascimento.getText());
+        contato.setEmail(textFieldEmail.getText());
+        
+        try{
+            
+            ServicosAgenda.cadastrar(contato);
+        
+            System.out.println("Cadastrado");
+            
+            this.dispose();
+            
+        } catch (Exception e){
+            
+            System.out.println("ERRO" + e);
+            
+        }
+        
+    }//GEN-LAST:event_buttonSalvarMouseClicked
 
     /**
      * @param args the command line arguments
@@ -185,8 +208,8 @@ public class NovoContato extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
+    private javax.swing.JButton buttonCancelar;
+    private javax.swing.JButton buttonSalvar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

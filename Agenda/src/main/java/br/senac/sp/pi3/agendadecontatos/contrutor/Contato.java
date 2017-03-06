@@ -12,12 +12,12 @@ package br.senac.sp.pi3.agendadecontatos.contrutor;
 public class Contato {
 
     private int ID_Contato;
-    private String Nome;
-    private String DataNasc;
+    private String nome;
+    private String dataNasc;
     private String DD_Telefone;
-    private String Telefone;
-    private String Email;
-
+    private String telefone;
+    private String email;
+    
     public int getID_Contato() {
         return ID_Contato;
     }
@@ -27,35 +27,35 @@ public class Contato {
     }
 
     public String getNome() {
-        return Nome;
+        return nome;
     }
 
     public void setNome(String Nome) {
-        this.Nome = Nome;
+        this.nome = Nome;
     }
 
     public String getDataNasc() {
-        return DataNasc;
+        return dataNasc;
     }
 
     public void setDataNasc(String DataNasc) {
-        this.DataNasc = DataNasc;
+        this.dataNasc = DataNasc;
     }
 
     public String getTelefone() {
-        return Telefone;
+        return telefone;
     }
 
     public void setTelefone(String Telefone) {
-        this.Telefone = Telefone;
+        this.telefone = Telefone;
     }
 
     public String getEmail() {
-        return Email;
+        return email;
     }
 
     public void setEmail(String Email) {
-        this.Email = Email;
+        this.email = Email;
     }
 
 }
