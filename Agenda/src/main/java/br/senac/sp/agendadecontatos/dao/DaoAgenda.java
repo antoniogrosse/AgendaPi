@@ -34,6 +34,21 @@ public class DaoAgenda {
         //Executa o comando SQL montado
         executarSQL(sql);
     }
+    
+    public static void atualizar(Contato contato)
+            throws SQLException, Exception {
+        //Monta a string de atualização do contato no BD, utilizando
+        //os dados e o ID do contato passados como parâmetro
+        String sql = "UPDATE cliente SET "
+                + "NOME='" + contato.getNome() + "', "
+                + "DATA_DE_NASCIMENTO='" + contato.getDataNasc()+ "', "
+                + "TELEFONE=" + contato.getTelefone()+ ", "
+                + "EMAIL='" + contato.getEmail()+ "' "
+                + " WHERE (ID=" + contato.getID_Contato()+ ")";
+
+        //Executa o comando SQL montado
+        executarSQL(sql);
+    }
 
     public static void excluir(Integer id) throws SQLException, Exception {
         String sql = "UPDATE contato SET "
@@ -53,6 +68,50 @@ public class DaoAgenda {
 
         //Retorna o resultado da execução da consulta SQL montada
         return executarConsulta(sql);
+    }
+    
+    public static List<Contato> procurar(String valor)
+            throws SQLException, Exception {
+        //Monta a string de consulta de contato no banco, utilizando
+        //o valor passado como parâmetro para busca nas colunas de
+        //nome (através do "LIKE" e ignorando minúsculas
+        //ou maiúsculas, através do "UPPER" aplicado à coluna e ao
+        //parâmetro). Além disso, também considera apenas os elementos
+        //que possuem a coluna de ativação de clientes configurada com
+        //o valor correto ("enabled" com "true")
+        String sql = "SELECT * FROM cliente WHERE (UPPER(nome) LIKE UPPER('%"
+                + valor + "%') AND enabled=true)";
+
+        //Retorna o resultado da execução da consulta SQL montada
+        return executarConsulta(sql);
+    }
+    
+    //Obtém uma instância da classe "Contato" através de dados do
+    //banco de dados, de acordo com o ID fornecido como parâmetro
+    public static Contato obter(Integer id)
+            throws SQLException, Exception {
+        //Compõe uma String de consulta que considera apenas o contato
+        //com o ID informado e que esteja ativo ("enabled" com "true")
+        String sql = "SELECT * FROM CONTATO WHERE (ID=" + id
+                + " AND enabled=true)";
+
+        //Armazena o valor da consulta numa lista temporária
+        List<Contato> listaContato = executarConsulta(sql);
+
+        //Verifica se a lista de resposta não é nula e contém resultados
+        if (listaContato != null && listaContato.size() > 0) {
+            //Como a consulta foi feita por ID, este é uma chave
+            //primária (só pode haver um) e a verificação de tamanho
+            //da lista foi maior que zero, deve significar que há
+            //apenas um item de resultado. Retornaremos este primeiro
+            //e único item, já que ele é o que se deseja obter.
+            return listaContato.get(0);
+        }
+
+        //Se chegamos aqui, o "return" anterior não foi executado porque
+        //a pesquisa não teve resultados e a lista estava nula ou vazia.
+        //Neste caso, não há um elemento a retornar, então retornamos "null"
+        return null;
     }
 
     private static void executarSQL(String sql) throws SQLException, Exception {

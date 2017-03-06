@@ -11,9 +11,10 @@ package br.senac.sp.pi3.agendadecontatos.telas;
  */
 public class TelaPrincipalAgenda extends javax.swing.JFrame {
 
-    /**
-     * Creates new form TelaPrincipalAgenda
-     */
+    private NovoContato cadastroContato = null;
+    private EditarContato editarContato = null;
+    
+    
     public TelaPrincipalAgenda() {
         initComponents();
     }
@@ -91,6 +92,11 @@ public class TelaPrincipalAgenda extends javax.swing.JFrame {
                 jButton2MouseClicked(evt);
             }
         });
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -151,6 +157,10 @@ public class TelaPrincipalAgenda extends javax.swing.JFrame {
         DetalhesContato telaDetalhes = new DetalhesContato();
         telaDetalhes.setVisible(true);
     }//GEN-LAST:event_jTable1MouseClicked
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments
