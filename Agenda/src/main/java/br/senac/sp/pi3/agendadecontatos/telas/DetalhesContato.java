@@ -123,27 +123,6 @@ public class DetalhesContato extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_buttonSairMouseClicked
     
-    
-    
-    
-    /**
-     * Funcao de cria painel no painel fixado.
-     * @param painel 
-     */
-    public void criarTela(JPanel painel) {
-        
-        panelDetalhes.add(painel);
-        
-        painel.setSize(panelDetalhes.getWidth(), panelDetalhes.getHeight());
-        
-        painel.setVisible(true);
-        
-        painel.validate();
-
-    }
-    
-    
-    
     /**
      * @param args the command line arguments
      */

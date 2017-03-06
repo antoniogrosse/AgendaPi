@@ -34,8 +34,8 @@ public class TelaPrincipalAgenda extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        buttonNovoContato = new javax.swing.JButton();
+        buttonEditarContato = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Agenda");
@@ -90,22 +90,17 @@ public class TelaPrincipalAgenda extends javax.swing.JFrame {
             jTable1.getColumnModel().getColumn(0).setResizable(false);
         }
 
-        jButton2.setText("Novo Contato");
-        jButton2.addMouseListener(new java.awt.event.MouseAdapter() {
+        buttonNovoContato.setText("Novo Contato");
+        buttonNovoContato.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jButton2MouseClicked(evt);
-            }
-        });
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                buttonNovoContatoMouseClicked(evt);
             }
         });
 
-        jButton3.setText("Editar Contato");
-        jButton3.addMouseListener(new java.awt.event.MouseAdapter() {
+        buttonEditarContato.setText("Editar Contato");
+        buttonEditarContato.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jButton3MouseClicked(evt);
+                buttonEditarContatoMouseClicked(evt);
             }
         });
 
@@ -125,9 +120,9 @@ public class TelaPrincipalAgenda extends javax.swing.JFrame {
                             .addComponent(jLabel1)
                             .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 375, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(buttonEditarContato, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(buttonNovoContato, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(0, 5, Short.MAX_VALUE)))
                 .addContainerGap())
         );
@@ -144,8 +139,8 @@ public class TelaPrincipalAgenda extends javax.swing.JFrame {
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton2)
-                    .addComponent(jButton3))
+                    .addComponent(buttonNovoContato)
+                    .addComponent(buttonEditarContato))
                 .addContainerGap(16, Short.MAX_VALUE))
         );
 
@@ -163,11 +158,11 @@ public class TelaPrincipalAgenda extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseClicked
+    private void buttonNovoContatoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttonNovoContatoMouseClicked
         NovoContato telaNovoContato = new NovoContato();
         
         telaNovoContato.setVisible(true);
-    }//GEN-LAST:event_jButton2MouseClicked
+    }//GEN-LAST:event_buttonNovoContatoMouseClicked
 
     private void jTable1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable1MouseClicked
        if ( evt.getClickCount() == 2 ){
@@ -176,15 +171,11 @@ public class TelaPrincipalAgenda extends javax.swing.JFrame {
        }
     }//GEN-LAST:event_jTable1MouseClicked
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
-
-    private void jButton3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton3MouseClicked
+    private void buttonEditarContatoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttonEditarContatoMouseClicked
         EditarContato telaEditar = new EditarContato();
         
         telaEditar.setVisible(true);
-    }//GEN-LAST:event_jButton3MouseClicked
+    }//GEN-LAST:event_buttonEditarContatoMouseClicked
 
     /**
      * @param args the command line arguments
@@ -222,9 +213,9 @@ public class TelaPrincipalAgenda extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton buttonEditarContato;
+    private javax.swing.JButton buttonNovoContato;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
