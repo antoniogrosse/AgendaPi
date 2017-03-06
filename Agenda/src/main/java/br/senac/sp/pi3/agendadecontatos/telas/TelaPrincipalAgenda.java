@@ -154,8 +154,10 @@ public class TelaPrincipalAgenda extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton2MouseClicked
 
     private void jTable1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable1MouseClicked
-        DetalhesContato telaDetalhes = new DetalhesContato();
-        telaDetalhes.setVisible(true);
+       if ( evt.getClickCount() == 2 ){
+            DetalhesContato telaDetalhes = new DetalhesContato();
+            telaDetalhes.setVisible(true);
+       }
     }//GEN-LAST:event_jTable1MouseClicked
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
