@@ -37,6 +37,9 @@ public class TelaPrincipalAgenda extends javax.swing.JFrame {
         jButton2 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Agenda");
+        setLocation(new java.awt.Point(500, 300));
+        setResizable(false);
 
         jLabel1.setText("Agenda");
 
