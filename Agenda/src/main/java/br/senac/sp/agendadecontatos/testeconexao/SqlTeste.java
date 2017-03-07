@@ -20,20 +20,13 @@ public class SqlTeste {
          try {
              
             con = ConnectionUtils.getConnection();
-             System.out.println("Conectado");
+            System.out.println("Conectado");
             
          }
          catch (Exception e){
-             e.printStackTrace();
+             System.out.println("ERROTST1 " + e);
          }
-         finally {
-             try {
-                 con.close();
-             }
-             catch (Exception e){
-                 e.printStackTrace();
-             }
-         }
+         
     }
     
 }

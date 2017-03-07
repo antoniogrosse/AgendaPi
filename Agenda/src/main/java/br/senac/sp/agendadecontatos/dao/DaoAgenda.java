@@ -6,7 +6,7 @@
 package br.senac.sp.agendadecontatos.dao;
 
 import br.senac.sp.agendadecontatos.utils.ConnectionUtils;
-import br.senac.sp.pi3.agendadecontatos.contrutor.Contato;
+import br.senac.sp.pi3.agendadecontatos.construtor.Contato;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;

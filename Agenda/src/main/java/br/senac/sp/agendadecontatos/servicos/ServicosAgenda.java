@@ -8,7 +8,7 @@ package br.senac.sp.agendadecontatos.servicos;
 import br.senac.sp.agendadecontatos.dao.DaoAgenda;
 import br.senac.sp.agendadecontatos.exceptions.ContatoException;
 import br.senac.sp.agendadecontatos.exceptions.DataSourceException;
-import br.senac.sp.pi3.agendadecontatos.contrutor.Contato;
+import br.senac.sp.pi3.agendadecontatos.construtor.Contato;
 import java.util.List;
 
 /**

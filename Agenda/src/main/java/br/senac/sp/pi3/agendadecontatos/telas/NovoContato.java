@@ -6,7 +6,7 @@
 package br.senac.sp.pi3.agendadecontatos.telas;
 
 import br.senac.sp.agendadecontatos.servicos.ServicosAgenda;
-import br.senac.sp.pi3.agendadecontatos.contrutor.Contato;
+import br.senac.sp.pi3.agendadecontatos.construtor.Contato;
 
 /**
  *
