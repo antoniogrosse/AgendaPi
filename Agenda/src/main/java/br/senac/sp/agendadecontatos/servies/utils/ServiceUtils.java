@@ -18,7 +18,7 @@ public class ServiceUtils {
         boolean validConnection = false;
         Connection connection = null;
         try {
-            connection = ConnectionUtils.getConnection();
+            connection = ConnectionUtils.connect();
             if (connection != null && connection.isValid(1000)) {
                 validConnection = true;
             }

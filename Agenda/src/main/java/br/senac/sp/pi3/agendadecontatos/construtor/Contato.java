@@ -11,19 +11,30 @@ package br.senac.sp.pi3.agendadecontatos.construtor;
  */
 public class Contato {
 
-    private int ID_Contato;
+    private int id;
     private String nome;
     private String dataNasc;
-    private String DD_Telefone;
     private String telefone;
     private String email;
     
-    public int getID_Contato() {
-        return ID_Contato;
+    public Contato(){
+        
     }
 
-    public void setID_Contato(int ID_Contato) {
-        this.ID_Contato = ID_Contato;
+    public Contato(String nome, String telefone, String dataNasc, String email) {
+        this.nome = nome;
+        this.telefone = telefone;
+        this.dataNasc = dataNasc;
+        this.email = email;
+    }
+    
+    
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int ID_Contato) {
+        this.id = ID_Contato;
     }
 
     public String getNome() {

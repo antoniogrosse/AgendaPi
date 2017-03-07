@@ -14,7 +14,7 @@ public class ConnectionUtils {
     public static Connection con = null;
 
     
-    public static Connection getConnection() throws SQLException {
+    public static Connection connect() throws SQLException {
 
         if (con == null || con.isClosed()) {
 
@@ -31,7 +31,7 @@ public class ConnectionUtils {
         
     }
     
-    public void Desconectar() throws SQLException {
+    public static void disconect() throws SQLException {
 
         con.close();
 

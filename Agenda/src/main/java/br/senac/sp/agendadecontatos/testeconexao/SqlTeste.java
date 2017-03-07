@@ -15,16 +15,16 @@ public class SqlTeste {
     
      private static Connection con = null;
      
-     public static void main(String[] args) {
+     public static void main(String[] args) { 
         
          try {
              
-            con = ConnectionUtils.getConnection();
+            con = ConnectionUtils.connect();
             System.out.println("Conectado");
             
          }
          catch (Exception e){
-             System.out.println("ERROTST1 " + e);
+             System.out.println("ERRO" + e);
          }
          
     }
